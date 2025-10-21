@@ -65,7 +65,10 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 # Allow everything for development; tighten up in production
-CORS_ALLOW_ALL_ORIGINS = True
+CORS_ALLOW_ALL_ORIGINS = ["https://todoclient.pages.dev/"]
+
+CSRF_TRUSTED_ORIGINS = ["https://todoclient.pages.dev/"]
+
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [
         'rest_framework.permissions.IsAuthenticated',
