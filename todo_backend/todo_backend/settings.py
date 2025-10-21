@@ -31,7 +31,14 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'todo_backend.urls'
 
-TEMPLATES = []
+TEMPLATES = [
+    {
+        'BACKEND':'django.template.backends.django.DjangoTemplates',
+        'DIRS':[],
+        'APP_DIRS':True,
+        'OPTIONS':{},
+    },
+]
 WSGI_APPLICATION = 'todo_backend.wsgi.application'
 
 DATABASES = {
