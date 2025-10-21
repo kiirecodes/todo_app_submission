@@ -65,7 +65,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 # Allow everything for development; tighten up in production
-CORS_ALLOW_ALL_ORIGINS = ["https://todoclient.pages.dev/"]
+CORS_ALLOWED_ORIGINS = ["https://todoclient.pages.dev/"]
 
 CSRF_TRUSTED_ORIGINS = ["https://todoclient.pages.dev/"]
 
