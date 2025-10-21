@@ -1,0 +1,16 @@
+# render.yaml - service configuration for Render (Django backend)
+# Replace <YOUR-REPO> placeholders and set environment variables in Render console.
+services:
+  - type: web
+    name: unique-todo-backend
+    env: python
+    region: oregon
+    plan: free
+    buildCommand: "pip install -r todo_backend/requirements.txt && pip install django-filter && python todo_backend/manage.py migrate"
+    startCommand: "gunicorn todo_backend.wsgi --bind 0.0.0.0:$PORT"
+    envVars:
+      - key: DJANGO_SETTINGS_MODULE
+        value: todo_backend.settings
+      - key: DJANGO_SECRET_KEY
+        value: "replace-in-render-secrets"
+    repo: <YOUR-GITHUB-USERNAME>/<YOUR-REPO>
